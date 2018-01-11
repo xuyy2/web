@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- 为搜索引擎定义关键词: -->
+	<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+	<!-- 为网页定义描述内容: -->
+	<meta name="description" content="免费 Web & 编程 教程">
+	<!-- 每30秒钟刷新当前页面: -->
+	<meta http-equiv="refresh" content="30">
+	<!-- 定义网页作者: -->
+	<meta name="autor" content="xuyy">
+	<title>为Html添加新元素</title>
+	<base href="" target="blank">
+	<!-- <link rel="stylesheet" type="text/css" href="../css/1.css"> -->
+	<!-- [if lt IE 9]>
+  		<script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]  -->
+	<script type="text/javascript">
+		document.createElement("myHero");
+		
+	</script>
+	<style type="text/css">
+		myHero {
+		    display: block;
+		    background-color: #ddd;
+		    padding: 50px;
+		    font-size: 30px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<myhero>我的第一个元素</myhero>
+	<h1>我的第一篇文章</h1>
+	<article>
+	菜鸟教程 —— 学的不仅是技术，更是梦想！！！
+	</article>
+	<nav> nav dd</nav>
+
+
+	<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;" ></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.fillStyle="#FF00FF";
+		ctx.fillRect(0,0,150,75);
+	</script>
+	
+	<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas2");
+		var ctx=c.getContext("2d");
+		ctx.moveTo(0,0);
+		ctx.lineTo(200,100);
+		ctx.stroke();
+		ctx.moveTo(200,0);
+		ctx.lineTo(0,100);
+		ctx.stroke();
+
+	</script>
+	
+	<canvas id="myCanvas3" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas3");
+		var ctx=c.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(95,50,40,0,2*Math.PI);
+		ctx.stroke();
+		ctx.arc(150,60,10,0,2*Math.PI);
+		ctx.stroke();
+	</script>
+	
+	<canvas id="myCanvas4" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas4");
+		var ctx=c.getContext("2d");
+		ctx.font="30px Arial";
+		ctx.fillText("Hello World",10,50);
+	</script>
+	
+	<canvas id="myCanvas5" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas5");
+		var ctx=c.getContext("2d");
+		ctx.font="30px Arial";
+		ctx.strokeText("Hello World",10,50);
+	</script>
+	
+	<canvas id="myCanvas6" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas6");
+		var ctx=c.getContext("2d");
+		// 创建渐变
+		var grd=ctx.createLinearGradient(0,0,200,0);
+		grd.addColorStop(0,"red");
+		grd.addColorStop(1,"white");
+		// 填充渐变
+		ctx.fillStyle=grd;
+		ctx.fillRect(10,10,150,80);
+	</script>
+	
+	<canvas id="myCanvas7" width="200" height="100" style="border:1px solid #000000;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas7");
+		var ctx=c.getContext("2d");
+		// 创建渐变
+		var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+		grd.addColorStop(0,"red");
+		grd.addColorStop(1,"white");
+		// 填充渐变
+		ctx.fillStyle=grd;
+		ctx.fillRect(10,10,150,80);
+	</script>	
+
+	<p>Image to use:</p>
+	<img id="scream" src="../image/scream.jpg" alt="The Scream" width="220" height="277"><p>Canvas:</p>
+	<canvas id="myCanvas8" width="250" height="300" style="border:2px solid #d3d3d3;">您的浏览器不支持 HTML5 canvas 标签。</canvas>
+	<script>
+		var c=document.getElementById("myCanvas8");
+		var ctx=c.getContext("2d");
+		var img=document.getElementById("scream");
+
+		img.onload = function() {
+			ctx.drawImage(img,10,10);
+		} 
+	</script>
+
+</body>
+</html>

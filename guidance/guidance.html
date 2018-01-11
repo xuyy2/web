@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>聚播科技</title>
+	<meta charset='utf-8'>
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" rel="stylesheet" />
+	<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+	<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+		
+	<script type="text/javascript">		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */		
+		(function(window, $, PhotoSwipe){
+			$(document).ready(function(){				
+				$('div.gallery-page')
+					.live('pageshow', function(e){						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));							
+						return true;						
+					})					
+					.live('pagehide', function(e){						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}						
+						return true;						
+					});				
+			});		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+	</script>
+	
+</head>
+<body>
+
+<div data-role="page" id="Home">
+
+	<div data-role="header">
+		<h1>聚播科技</h1>
+	</div>		
+	
+	<div data-role="content" >			
+		<p>聚播智能营销助手功能引导</p>				
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#Gallery1">使用前必读</a></li>
+			<li><a href="#Gallery2">悬浮窗介绍</a></li>
+			<li><a href="#Gallery5">营销百宝箱</a></li>
+			<li><a href="#Gallery10">微商团队</a></li>
+			<li><a href="#Gallery3">每日任务</a></li>
+		</ul>
+
+		<p>聚播科技微商营销手机 第一版</p>		
+		
+		<ul data-role="listview" data-inset="true">
+			<li><a href="http://yunlauncher.com/help.html" target="_blank">第一版帮助</a></li> 
+		</ul> 		
+
+	</div>
+
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery1" class="gallery-page">
+	<div data-role="header">
+		<h1>使用前必读</h1>
+	</div>
+	<div data-role="content">	
+		<ul class="gallery">		
+			<!-- <li><a href="images/001.JPG" rel="external"><img src="images/001.JPG" alt="Image 001" /></a></li> -->
+			<li><a href="images/002.JPG" rel="external"><img src="images/002.JPG" alt="Image 002" /></a></li>			
+		</ul>		
+	</div>	
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery2" class="gallery-page">
+	<div data-role="header">
+		<h1>悬浮窗介绍</h1>
+	</div>
+	<div data-role="collapsible">
+		<h1>浮窗说明</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/003.JPG" rel="external"><img src="images/003.JPG" alt="Image 001" /></a></li>
+				<li><a href="images/004.JPG" rel="external"><img src="images/004.JPG" alt="Image 002" /></a></li>			
+				<li><a href="images/005.JPG" rel="external"><img src="images/005.JPG" alt="Image 003" /></a></li>			
+				<li><a href="images/006.JPG" rel="external"><img src="images/006.JPG" alt="Image 004" /></a></li>			
+				<li><a href="images/007.JPG" rel="external"><img src="images/007.JPG" alt="Image 005" /></a></li>			
+				<li><a href="images/008.JPG" rel="external"><img src="images/008.JPG" alt="Image 006" /></a></li>			
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>群管理</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/13_1.JPG" rel="external"><img src="images/13_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/13_2.JPG" rel="external"><img src="images/13_2.JPG" alt="Image 02" /></a></li>
+				<li><a href="images/13_3.JPG" rel="external"><img src="images/13_3.JPG" alt="Image 03" /></a></li>
+				<li><a href="images/13_4.JPG" rel="external"><img src="images/13_4.JPG" alt="Image 04" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery5" class="gallery-page">
+	<div data-role="header">
+		<h1>营销百宝箱</h1>
+	</div>
+	<div data-role="collapsible">
+		<h1>爆粉工具</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/5_1.JPG" rel="external"><img src="images/5_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/5_2.JPG" rel="external"><img src="images/5_2.JPG" alt="Image 02" /></a></li>
+				<li><a href="images/5_3.JPG" rel="external"><img src="images/5_3.JPG" alt="Image 03" /></a></li>
+				<li><a href="images/5_4.JPG" rel="external"><img src="images/5_4.JPG" alt="Image 04" /></a></li>
+				<li><a href="images/5_5.JPG" rel="external"><img src="images/5_5.JPG" alt="Image 05" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>群发助手</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/6_1.JPG" rel="external"><img src="images/6_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/6_2.JPG" rel="external"><img src="images/6_2.JPG" alt="Image 02" /></a></li>
+				<li><a href="images/6_3.JPG" rel="external"><img src="images/6_3.JPG" alt="Image 03" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>朋友圈</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/7_1.JPG" rel="external"><img src="images/7_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/7_2.JPG" rel="external"><img src="images/7_2.JPG" alt="Image 02" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>实用小工具</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/8_1.JPG" rel="external"><img src="images/8_1.JPG" alt="Image 01" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>消息管理</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/9_1.JPG" rel="external"><img src="images/9_1.JPG" alt="Image 01" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery10" class="gallery-page">
+	<div data-role="header">
+		<h1>微商团队</h1>
+	</div>
+	<div data-role="collapsible">
+		<h1>团队面板</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/10_1.JPG" rel="external"><img src="images/10_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/10_2.JPG" rel="external"><img src="images/10_2.JPG" alt="Image 02" /></a></li>
+				<li><a href="images/10_3.JPG" rel="external"><img src="images/10_3.JPG" alt="Image 03" /></a></li>
+				<li><a href="images/10_4.JPG" rel="external"><img src="images/10_4.JPG" alt="Image 04" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>营销资料</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/11_1.JPG" rel="external"><img src="images/11_1.JPG" alt="Image 01" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>团队信息</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/12_1.JPG" rel="external"><img src="images/12_1.JPG" alt="Image 01" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery3" class="gallery-page">
+	<div data-role="header">
+		<h1>每日任务</h1>
+	</div>
+	<div data-role="collapsible">
+		<h1>任务面板</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/3_1.JPG" rel="external"><img src="images/3_1.JPG" alt="Image 01" /></a></li>
+				<li><a href="images/3_2.JPG" rel="external"><img src="images/3_2.JPG" alt="Image 02" /></a></li>
+				<li><a href="images/3_3.JPG" rel="external"><img src="images/3_3.JPG" alt="Image 03" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="collapsible">
+		<h1>智能营销/任务列表</h1>
+		<p>
+			<ul class="gallery">		
+				<li><a href="images/4_1.JPG" rel="external"><img src="images/4_1.JPG" alt="Image 01" /></a></li>
+			</ul>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>&copy; 2016 杭州聚播科技有限公司</h4>
+	</div>
+</div>
+</body>
+</html>
