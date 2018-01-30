@@ -1,0 +1,13 @@
+body {margin: 0px;padding: 0px;}
+.div1 {
+	height: 75px;width: 100%;position: fixed;
+1}
+.div1>img {
+	float: left;
+}
+.div2 {
+	height: 500px;
+	/* background-color: black; */
+	background-image: url("../img/banner/3banner.png");
+	background-repeat: no-repeat;
+}
