@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xyy</title>
+
+    <script type="text/javascript">
+
+      function countClick(){
+        if(typeof(Storage)!=="undefined"){
+          if (localStorage.countClick) {
+            localStorage.countClick=Number(localStorage.countClick)+1
+          }else {
+            localStorage.countClick=1
+          }
+
+          document.getElementById("result2").innerHTML="你已经点击了"+localStorage.countClick+"次"
+        }else {
+          document.getElementById("result").innerHTML="你的浏览器不支持web储存"
+        }
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <div id="result1"></div>
+    <script>
+    if(typeof(Storage)!="undefined")
+    {
+      localStorage.sitename="菜鸟教程";
+      document.getElementById("result1").innerHTML="网站名：" + localStorage.sitename;
+    }
+    else
+    {
+      document.getElementById("result1").innerHTML="对不起，您的浏览器不支持 web 存储。";
+    }
+    </script>
+
+    <div class="">
+      <button type="button" name="button" onclick="countClick();">Click Me！</button>
+      <div class="result" id="result2">
+
+      </div>
+    </div>
+
+  </body>
+</html>

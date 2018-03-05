@@ -18,8 +18,9 @@
 	<![endif]  -->
 	<script type="text/javascript">
 		document.createElement("myHero");
-		
+
 	</script>
+
 	<style type="text/css">
 		myHero {
 		    display: block;
@@ -45,9 +46,10 @@
 		var c=document.getElementById("myCanvas");
 		var ctx=c.getContext("2d");
 		ctx.fillStyle="#FF00FF";
+		// (x,y,widht,height)
 		ctx.fillRect(0,0,150,75);
 	</script>
-	
+
 	<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas2");
@@ -60,7 +62,7 @@
 		ctx.stroke();
 
 	</script>
-	
+
 	<canvas id="myCanvas3" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas3");
@@ -68,26 +70,30 @@
 		ctx.beginPath();
 		ctx.arc(95,50,40,0,2*Math.PI);
 		ctx.stroke();
+
+		ctx.beginPath();
 		ctx.arc(150,60,10,0,2*Math.PI);
 		ctx.stroke();
 	</script>
-	
+
 	<canvas id="myCanvas4" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas4");
 		var ctx=c.getContext("2d");
 		ctx.font="30px Arial";
+		//实心字体
 		ctx.fillText("Hello World",10,50);
 	</script>
-	
+
 	<canvas id="myCanvas5" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas5");
 		var ctx=c.getContext("2d");
 		ctx.font="30px Arial";
+		//空心字体
 		ctx.strokeText("Hello World",10,50);
 	</script>
-	
+
 	<canvas id="myCanvas6" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas6");
@@ -99,8 +105,14 @@
 		// 填充渐变
 		ctx.fillStyle=grd;
 		ctx.fillRect(10,10,150,80);
+
+		// var c=document.getElementById("myCanvas6");
+		// var ctx=c.getContext("2d");
+		// ctx.font="30px Arial";
+		// //空心字体
+		// ctx.strokeText("Hello World",10,50);
 	</script>
-	
+
 	<canvas id="myCanvas7" width="200" height="100" style="border:1px solid #000000;"></canvas>
 	<script type="text/javascript">
 		var c=document.getElementById("myCanvas7");
@@ -112,7 +124,7 @@
 		// 填充渐变
 		ctx.fillStyle=grd;
 		ctx.fillRect(10,10,150,80);
-	</script>	
+	</script>
 
 	<p>Image to use:</p>
 	<img id="scream" src="../image/scream.jpg" alt="The Scream" width="220" height="277"><p>Canvas:</p>
@@ -123,9 +135,8 @@
 		var img=document.getElementById("scream");
 
 		img.onload = function() {
-			ctx.drawImage(img,10,10);
-		} 
 	</script>
+
 
 </body>
 </html>
